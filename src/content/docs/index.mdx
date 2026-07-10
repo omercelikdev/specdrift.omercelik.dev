@@ -1,0 +1,89 @@
+---
+title: specdrift
+description: Deterministic spec lint for manifest-driven golden paths — schema and cross-field invariant validation, manifest-vs-repository drift detection, and an MCP server. It never calls an LLM; LLMs call it.
+template: splash
+hero:
+  tagline: A golden path lives or dies by one promise — the manifest is the single source of truth. Schemas guard its shape and analyzers guard your code, but nothing watches the space between them, where "the manifest says X, the repo does Y" rots silently. specdrift is the lint layer for that gap.
+  image:
+    file: ../../assets/logo.svg
+  actions:
+    - text: Get started
+      link: /getting-started/
+      icon: right-arrow
+      variant: primary
+    - text: Why specdrift
+      link: /why-specdrift/
+      icon: right-arrow
+      variant: minimal
+    - text: View on GitHub
+      link: https://github.com/omercelikdev/specdrift
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## It never calls an LLM. LLMs call it.
+
+AI-generated changes decay exactly where no tool is looking: between artifacts. A model adds a feature
+flag to the manifest and forgets the package. It wires a call and forgets to declare it. It regenerates
+an OpenAPI document and never commits it. Each artifact is individually valid; together they lie.
+
+specdrift is deliberately boring. Same inputs, byte-identical report. No network, no clocks in the
+output, no model in the loop — so an agent can trust the answer, and so can your CI.
+
+```bash
+specdrift validate .platform/manifest.yaml --schema manifest.schema.json --rules rules.yaml
+specdrift drift --repo .
+```
+
+```
+ERROR SPEC0101 at features.distributedCaching.redis.connectionName:
+  features.distributedCaching.levels includes 'l2' but redis.connectionName is missing
+  — name the connection the cache should use.
+ERROR SPEC0201 at features.outbox:
+  the manifest enables this feature but no project references 'Platform.Messaging'
+  — the app does not do what the manifest says.
+```
+
+<CardGrid>
+  <Card title="validate" icon="approve-check">
+    JSON-Schema validation of a YAML or JSON manifest, plus cross-field invariants you declare as data:
+    "when this path contains that value, this other path must exist."
+  </Card>
+  <Card title="drift" icon="warning">
+    Manifest against repository reality. A feature enabled with its package absent. A package referenced
+    with no feature declaring it. A committed contract that no longer matches the built one.
+  </Card>
+  <Card title="mcp" icon="puzzle">
+    The same two verbs over stdio MCP — `spec_validate` and `spec_drift` — so coding agents ask the
+    engine instead of guessing.
+  </Card>
+  <Card title="Profiles are data" icon="document">
+    The engine knows nothing about your platform. The schema, the invariant rules and the wiring tables
+    ship in your repository, not in specdrift.
+  </Card>
+  <Card title="Deterministic by construction" icon="seti:lock">
+    Same inputs, byte-identical report. Unknown schema versions are a hard fail — the engine never
+    guesses forward.
+  </Card>
+  <Card title="Messages teach the fix" icon="star">
+    Every finding carries a rule id, a severity, and a sentence that tells you what to do. Naming the sin
+    is not enough.
+  </Card>
+  <Card title="Exit code is the contract" icon="seti:shell">
+    `0` clean · `1` error findings · `2` usage or I/O failure. Warnings inform; they never gate.
+  </Card>
+  <Card title="Gated from day one" icon="rocket">
+    A license allowlist over the whole dependency graph, a Stryker mutation gate, and CI on every push.
+    MIT, with no dependency that isn't.
+  </Card>
+</CardGrid>
+
+## Reports, never auto-fixes
+
+Drift detection is **textual by design**, and says so out loud: it scans project files for package
+references and source files for wiring calls. Cheap, fast, and honest about what it is. Roslyn-grade
+analysis belongs in analyzers that run inside your compilation — not in a lint pass over a repository.
+
+So specdrift tells you what diverged and where. It never edits your code to make the report go away.

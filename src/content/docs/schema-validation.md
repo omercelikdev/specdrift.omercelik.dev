@@ -26,7 +26,7 @@ This is the load-bearing decision. If your schema uses a keyword the evaluator d
 `multipleOf`, `patternProperties`, `dependentRequired`, `exclusiveMinimum` — specdrift **refuses to run**:
 
 ```
-specdrift: Schema keyword 'multipleOf' is not understood by this engine — never guess.
+SpecDrift: Schema keyword 'multipleOf' is not understood by this engine — never guess.
 Supported assertions: $ref, additionalProperties, allOf, anyOf, const, ...
 ```
 

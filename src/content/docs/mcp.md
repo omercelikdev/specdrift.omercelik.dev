@@ -19,8 +19,8 @@ Like any stdio MCP server:
 ```json
 {
   "mcpServers": {
-    "specdrift": {
-      "command": "specdrift",
+    "SpecDrift": {
+      "command": "SpecDrift",
       "args": ["mcp"]
     }
   }
@@ -86,4 +86,4 @@ An agent can call `spec_drift` twice and reason about the diff, because an uncha
 produce a changed report.
 
 **It never calls a model.** The tool an LLM calls is not, itself, allowed to call an LLM. That is the whole
-inversion — see [Why specdrift](/why-specdrift/#the-inversion-llms-call-it).
+inversion — see [Why SpecDrift](/why-specdrift/#the-inversion-llms-call-it).

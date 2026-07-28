@@ -1,5 +1,5 @@
 ---
-title: Why specdrift
+title: Why SpecDrift
 description: The gap between artifacts is where manifest-driven systems rot — and where no existing tool looks.
 ---
 

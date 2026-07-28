@@ -1,6 +1,6 @@
 # specdrift.omercelik.dev
 
-Landing page and documentation for [specdrift](https://github.com/omercelikdev/specdrift) — deterministic
+Landing page and documentation for [specdrift](https://github.com/qorpe/specdrift) — deterministic
 spec lint for manifest-driven golden paths.
 
 Built with [Astro](https://astro.build/) + [Starlight](https://starlight.astro.build/), styled with the

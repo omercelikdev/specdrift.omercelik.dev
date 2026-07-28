@@ -11,10 +11,10 @@ export default defineConfig({
       description: 'Deterministic spec lint for manifest-driven golden paths. Schema and cross-field invariant validation, manifest-vs-repository drift detection, and an MCP server. It never calls an LLM — LLMs call it.',
       logo: { src: './src/assets/logo.svg', replacesTitle: false },
       social: {
-        github: 'https://github.com/omercelikdev/specdrift',
+        github: 'https://github.com/qorpe/specdrift',
       },
       customCss: ['./src/styles/specdrift.css'],
-      editLink: { baseUrl: 'https://github.com/omercelikdev/specdrift.omercelik.dev/edit/main/' },
+      editLink: { baseUrl: 'https://github.com/qorpe/specdrift.omercelik.dev/edit/main/' },
       sidebar: [
         {
           label: 'Start here',

@@ -13,7 +13,7 @@ will fail until it is. Build it from source in the meantime — it takes a few s
 :::
 
 ```bash
-git clone https://github.com/omercelikdev/specdrift.git
+git clone https://github.com/qorpe/specdrift.git
 cd specdrift
 
 dotnet pack src/Specdrift -c Release -o ./nupkg

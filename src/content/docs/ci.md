@@ -29,8 +29,8 @@ jobs:
         with:
           dotnet-version: 10.0.x
 
-      - name: install specdrift
-        run: dotnet tool install -g specdrift
+      - name: install SpecDrift
+        run: dotnet tool install -g SpecDrift
 
       - name: validate the manifest
         run: |
@@ -74,7 +74,7 @@ The same two commands, one hook. `validate` is fast enough to be unnoticeable. `
 `.csproj` and `.cs` in the repository, so on a large tree prefer it as a push hook or a CI step rather
 than something that runs on every commit.
 
-## What specdrift gates in its own repository
+## What SpecDrift gates in its own repository
 
 The tool is built behind the gates it argues for, from the first commit:
 

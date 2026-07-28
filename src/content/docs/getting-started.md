@@ -1,6 +1,6 @@
 ---
 title: Getting started
-description: Install specdrift, validate a manifest, and check a repository for drift.
+description: Install SpecDrift, validate a manifest, and check a repository for drift.
 ---
 
 specdrift is a .NET global tool. It needs the **.NET 10 SDK** to install, and nothing at runtime.
@@ -14,7 +14,7 @@ will fail until it is. Build it from source in the meantime — it takes a few s
 
 ```bash
 git clone https://github.com/qorpe/specdrift.git
-cd specdrift
+cd SpecDrift
 
 dotnet pack src/Specdrift -c Release -o ./nupkg
 dotnet tool install -g specdrift --add-source ./nupkg
@@ -23,7 +23,7 @@ dotnet tool install -g specdrift --add-source ./nupkg
 Once it is published, the install is the usual one line:
 
 ```bash
-dotnet tool install -g specdrift
+dotnet tool install -g SpecDrift
 ```
 
 Verify:
@@ -119,14 +119,14 @@ Register specdrift as an MCP server and a coding agent can call the same two ver
 whether its own change was coherent:
 
 ```json
-{ "mcpServers": { "specdrift": { "command": "specdrift", "args": ["mcp"] } } }
+{ "mcpServers": { "SpecDrift": { "command": "SpecDrift", "args": ["mcp"] } } }
 ```
 
 See [MCP server](/mcp/).
 
 ## Next
 
-- [Why specdrift](/why-specdrift/) — the gap it exists to watch.
+- [Why SpecDrift](/why-specdrift/) — the gap it exists to watch.
 - [Schema validation](/schema-validation/) — exactly which keywords the evaluator asserts.
 - [Invariant rules](/invariant-rules/) — `require`, `forbid`, `deny`.
 - [Drift detection](/drift-detection/) — every check and its finding id.

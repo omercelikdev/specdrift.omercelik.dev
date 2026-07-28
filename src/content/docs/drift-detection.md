@@ -115,7 +115,7 @@ ERROR SPEC0221 at schemaVersion: manifest declares schemaVersion 2 but this prof
   — align them, never guess forward
 ```
 
-The manifest moved and the tooling did not. Rather than interpret a version it was never taught, specdrift
+The manifest moved and the tooling did not. Rather than interpret a version it was never taught, SpecDrift
 stops. This is the same instinct as the hard fail on an unknown schema keyword: forward-guessing is the one
 behavior a trust tool cannot afford.
 

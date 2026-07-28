@@ -19,7 +19,7 @@ remote reference would make the report depend on someone else's uptime.
 identical bytes.
 
 **No LLM.** specdrift never calls a model. Models call specdrift. See
-[Why specdrift](/why-specdrift/#the-inversion-llms-call-it).
+[Why SpecDrift](/why-specdrift/#the-inversion-llms-call-it).
 
 **No unordered iteration.** Directory scans are sorted with an ordinal comparison before anything is read.
 Findings come back in declaration order for rules, and in document order for schema assertions. The report

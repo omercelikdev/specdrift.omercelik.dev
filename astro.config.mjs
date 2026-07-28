@@ -7,7 +7,7 @@ export default defineConfig({
   site: 'https://specdrift.omercelik.dev',
   integrations: [
     starlight({
-      title: 'specdrift',
+      title: 'SpecDrift',
       description: 'Deterministic spec lint for manifest-driven golden paths. Schema and cross-field invariant validation, manifest-vs-repository drift detection, and an MCP server. It never calls an LLM — LLMs call it.',
       logo: { src: './src/assets/logo.svg', replacesTitle: false },
       social: {
@@ -20,7 +20,7 @@ export default defineConfig({
           label: 'Start here',
           items: [
             { label: 'Getting started', slug: 'getting-started' },
-            { label: 'Why specdrift', slug: 'why-specdrift' },
+            { label: 'Why SpecDrift', slug: 'why-specdrift' },
             { label: 'CLI reference', slug: 'cli' },
           ],
         },

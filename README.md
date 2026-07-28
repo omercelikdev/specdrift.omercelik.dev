@@ -1,4 +1,4 @@
-# specdrift.omercelik.dev
+# SpecDrift.omercelik.dev
 
 Landing page and documentation for [specdrift](https://github.com/qorpe/specdrift) — deterministic
 spec lint for manifest-driven golden paths.

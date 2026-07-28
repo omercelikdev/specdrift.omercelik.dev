@@ -4,7 +4,7 @@ import starlight from '@astrojs/starlight'
 // Landing (splash) + docs in one Starlight site, deployed to Cloudflare Pages.
 // Same design standard as the rest of omercelik.dev — see src/styles/specdrift.css.
 export default defineConfig({
-  site: 'https://specdrift.omercelik.dev',
+  site: 'https://specdrift.qorpe.com',
   integrations: [
     starlight({
       title: 'SpecDrift',
@@ -14,7 +14,7 @@ export default defineConfig({
         github: 'https://github.com/qorpe/specdrift',
       },
       customCss: ['./src/styles/specdrift.css'],
-      editLink: { baseUrl: 'https://github.com/qorpe/specdrift.omercelik.dev/edit/main/' },
+      editLink: { baseUrl: 'https://github.com/qorpe/specdrift.qorpe.com/edit/main/' },
       sidebar: [
         {
           label: 'Start here',
